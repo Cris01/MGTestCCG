@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>837edaaa-e0d9-46bf-b684-c3db23b0ef05</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.0.2" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MGtestCCG.Application.QueryHandler\MGtestCCG.Application.QueryHandler.csproj" />
+    <ProjectReference Include="..\MGtestCCG.Application.Query\MGtestCCG.Application.Query.csproj" />
+    <ProjectReference Include="..\MGtestCCG.Domain.Irepositories\MGtestCCG.Domain.Irepositories.csproj" />
+    <ProjectReference Include="..\MGtestCCG.Domain.Services\MGtestCCG.Domain.Services.csproj" />
+    <ProjectReference Include="..\MGtestCCG.Infrastructure.Repositories\MGtestCCG.Infrastructure.Repositories.csproj" />
+  </ItemGroup>
+
+
+</Project>

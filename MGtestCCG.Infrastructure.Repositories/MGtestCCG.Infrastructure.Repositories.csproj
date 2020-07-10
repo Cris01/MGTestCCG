@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MGtestCCG.Domain.Entities\MGtestCCG.Domain.Entities.csproj" />
+    <ProjectReference Include="..\MGtestCCG.Domain.Irepositories\MGtestCCG.Domain.Irepositories.csproj" />
+  </ItemGroup>
+
+</Project>
