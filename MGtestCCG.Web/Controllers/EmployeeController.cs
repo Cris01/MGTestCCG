@@ -25,9 +25,15 @@ namespace MGtestCCG.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Employee>> Get()
+        public async Task<IActionResult> Get()
         {
-            return await this.employeeRepository.GetAllAsync().ConfigureAwait(false);
+            GetAllEmployeeQuery request = new GetAllEmployeeQuery();
+            var result = await _Mediator.Send(request).ConfigureAwait(false);
+            if (result == null)
+            {
+                return Ok();
+            }
+            return Ok(result);
         }
 
         [HttpGet]
@@ -37,7 +43,7 @@ namespace MGtestCCG.Web.Controllers
             var result = await _Mediator.Send(request).ConfigureAwait(false);
             if (result == null)
             {
-                return NotFound();
+                return Ok();
             }
             return Ok(result);
         }
@@ -49,7 +55,7 @@ namespace MGtestCCG.Web.Controllers
             var result = await _Mediator.Send(request).ConfigureAwait(false);
             if (result == null)
             {
-                return NotFound();
+                return Ok();
             }
             return Ok(result);
         }

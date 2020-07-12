@@ -31,7 +31,13 @@ namespace MGtestCCG.Application.QueryHandler
                 var employee = await this._employeeRepository.GetByEmployeePhoneNumber(request.CellPhone);
                 var serviceEmployee = _serviceDelegate((EmployeeContractType)employee.TypeContract);
                 var calculatedSalary = await serviceEmployee.CalculateEmployeeSalaryAsync(employee.Id);
-                return new EmployeeSalaryDTO { CalculatedSalary = calculatedSalary, CompleteName = $"{employee.Name }{employee.LastName}" };
+                return new EmployeeSalaryDTO
+                {
+                    CalculatedSalary = calculatedSalary,
+                    CompleteName = $"{employee.Name} {employee.LastName}",
+                    Id = employee.Id,
+                    PhoneNumber = employee.PhoneNumber
+                };
             }
             catch (Exception)
             {
