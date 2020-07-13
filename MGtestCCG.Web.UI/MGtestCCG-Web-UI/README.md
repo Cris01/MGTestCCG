@@ -1,4 +1,20 @@
-# MGtestCCGWebUI
+# Architecture used
+
+Although the architecture proposed by the technical test is MVC, I decided to apply the onio architecture because it provides greater decoupling between the different layers that use the application.
+
+## Swagger
+
+This project contains swagger to test the REST API
+
+## SQl in memory
+
+Don't worry about the data to run the application, this project features SQL in-memory with seeded data for quick testing.
+
+## Unit test
+
+The solution has a unit testing project.
+
+## MGtestCCGWebUI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
