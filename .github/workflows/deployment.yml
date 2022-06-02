@@ -24,4 +24,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: kubectl apply -f test-deployment.yaml
+        script: |
+          rm test-deployment.yaml
+          kubectl apply -f test-deployment.yaml
