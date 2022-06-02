@@ -14,7 +14,7 @@ jobs:
     - name: Copy single file to remote
       uses: garygrossgarten/github-action-scp@release
       with:
-          local: test-deployment.yam
+          local: test-deployment.yaml
           remote: /home/ubuntu
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
