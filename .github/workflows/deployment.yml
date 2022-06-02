@@ -7,14 +7,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: remove old deployment file
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        port: ${{ secrets.PORT }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: rm test-deployment.yaml
     - uses: actions/checkout@master
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
