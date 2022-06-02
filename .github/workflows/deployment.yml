@@ -18,7 +18,6 @@ jobs:
           remote: /home/ubuntu
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
           privateKey : ${{ secrets.SSH_PRIVATE_KEY }}
           
     - name: executing remote ssh commands using password
@@ -26,6 +25,5 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: kubectl apply -f test-deployment.yaml
