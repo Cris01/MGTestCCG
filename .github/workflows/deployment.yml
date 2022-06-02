@@ -7,6 +7,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
       with:
@@ -14,4 +16,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: kubectl apply -f /test-deployment.yaml
+        script: kubectl apply -f test-deployment.yaml
